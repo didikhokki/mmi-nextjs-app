@@ -19,6 +19,47 @@
   }
 }
 
+/* ===== Smooth Infinite Slider ===== */
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scrollSlider 30s linear infinite;
+}
+
+/* ===== Smooth Infinite Slider ===== */
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scrollSlider 30s linear infinite;
+}
+
+.slide {
+  min-width: 320px;
+  height: 220px;
+  border-right: 2px solid white;
+  flex-shrink: 0;
+}
+
+/* LEFT → RIGHT Animation */
+@keyframes scrollSlider {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+/* Slider animation */
+.animate-slider {
+  animation: sliderMove 25s linear infinite;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
