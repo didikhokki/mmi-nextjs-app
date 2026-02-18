@@ -18,13 +18,15 @@ const rooms = [
 
 export default function Rooms() {
   return (
-    <section className="py-28 bg-[#f8f8f5]">
+    <section className="py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
+        
         {/* Title */}
-        <h2 className="text-5xl font-serif mb-4">
+        <h2 className="text-5xl font-serif mb-4 text-black">
           Rooms & Villas
         </h2>
-        <p className="text-gray-500 mb-16">
+
+        <p className="text-black mb-16">
           Choose from our finest suites inspired by nature and tradition.
         </p>
 
@@ -32,8 +34,9 @@ export default function Rooms() {
         <div className="grid md:grid-cols-3 gap-12">
           {rooms.map((room, i) => (
             <div key={i} className="group">
+              
               {/* Image */}
-              <div className="overflow-hidden rounded-xl shadow-md">
+              <div className="overflow-hidden rounded-xl shadow-md border border-black">
                 <img
                   src={room.img}
                   alt={room.title}
@@ -42,15 +45,25 @@ export default function Rooms() {
               </div>
 
               {/* Text */}
-              <h3 className="mt-6 text-2xl font-serif">
+              <h3 className="mt-6 text-2xl font-serif text-black">
                 {room.title}
               </h3>
-              <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+
+              <p className="mt-3 text-black text-sm leading-relaxed">
                 {room.desc}
               </p>
 
               {/* Button */}
-              <button className="mt-6 px-6 py-3 border rounded-full text-sm hover:bg-black hover:text-white transition">
+              <button
+                className="
+                  mt-6 px-6 py-3
+                  border border-black
+                  rounded-full text-sm
+                  text-black
+                  hover:bg-black hover:text-white
+                  transition
+                "
+              >
                 View Details →
               </button>
             </div>
