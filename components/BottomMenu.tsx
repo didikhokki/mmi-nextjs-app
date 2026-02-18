@@ -6,26 +6,32 @@ export default function BottomMenu() {
       <div
         className="
           max-w-7xl mx-auto
-          flex items-center justify-between
+          flex flex-col gap-4
+          md:flex-row md:items-center md:justify-between
           px-6 py-6
-          text-sm
-          font-serif
+          text-sm font-serif
         "
       >
-        {/* LEFT - Scroll */}
-        <div className="flex items-center gap-3 text-black">
+        {/* ================= DESKTOP LEFT = Scroll ================= */}
+        <div
+          className="
+            hidden md:flex
+            items-center gap-2
+            text-black
+          "
+        >
           <span className="text-lg">↓</span>
           <span>Scroll</span>
         </div>
 
-        {/* CENTER - Navigation */}
+        {/* ================= NAVIGATION ================= */}
         <nav
           className="
-            flex gap-10
-            text-black
-            tracking-wide
-            overflow-x-auto
-            whitespace-nowrap
+            flex gap-8
+            justify-start md:justify-center
+            text-black tracking-wide
+            overflow-x-auto whitespace-nowrap
+            order-1
           "
         >
           <a href="#" className="hover:underline">
@@ -51,8 +57,14 @@ export default function BottomMenu() {
           </a>
         </nav>
 
-        {/* RIGHT - Language Dropdown */}
-        <div className="relative group">
+        {/* ================= LANGUAGE ================= */}
+        <div
+          className="
+            relative group
+            flex justify-start md:justify-end
+            order-2
+          "
+        >
           <button
             className="
               flex items-center gap-2
@@ -70,8 +82,7 @@ export default function BottomMenu() {
               absolute right-0 mt-2
               hidden group-hover:block
               bg-white border border-black
-              text-sm
-              w-32
+              text-sm w-36
               z-50
             "
           >
@@ -94,6 +105,19 @@ export default function BottomMenu() {
               Indonesian
             </a>
           </div>
+        </div>
+
+        {/* ================= MOBILE Scroll (Bottom) ================= */}
+        <div
+          className="
+            flex md:hidden
+            items-center gap-2
+            text-black
+            order-3
+          "
+        >
+          <span className="text-lg">↓</span>
+          <span>Scroll</span>
         </div>
       </div>
     </div>
