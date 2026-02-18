@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import BottomMenu from "@/components/BottomMenu";
 import Information from "@/components/Information";
 import ImageSlider from "@/components/ImageSlider";
 import Overview from "@/components/Overview";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <Hero />
+      <BottomMenu />
 
       {/* INFO */}
       <Information />
