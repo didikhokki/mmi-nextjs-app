@@ -5,20 +5,17 @@ import StickyReservation from "./StickyReservation";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[#f8f8f5] relative">
-      
+    <section className="w-full bg-[#f8f8f5] relative isolate">
       {/* Sticky Floating Buttons */}
-      <div className="relative z-40">
-        <StickyReservation />
-      </div>
+      <StickyReservation />
 
-      {/* ================= TOP HEADER FIX ================= */}
-      <header className="border-b bg-white relative z-50">
+      {/* ================= HEADER FIX TOTAL ================= */}
+      <header className="border-b bg-white relative z-[999]">
         <div
           className="
             max-w-7xl mx-auto
             flex flex-col md:flex-row
-            justify-between
+            justify-between items-center
             px-4 sm:px-6 md:px-8
             py-4
             gap-6
@@ -40,24 +37,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Buttons */}
-          <div
-            className="
-              flex flex-col sm:flex-row
-              gap-3
-              w-full md:w-auto
-              justify-center md:justify-end
-            "
-          >
-            <button className="border px-4 py-2 text-sm w-full sm:w-auto bg-white hover:bg-black hover:text-white transition">
+          {/* Buttons FIX */}
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <button className="border px-4 py-2 text-sm bg-white text-black font-medium shadow-sm hover:bg-black hover:text-white transition w-full sm:w-auto">
               Room Reservations ↗
             </button>
 
-            <button className="border px-4 py-2 text-sm w-full sm:w-auto bg-white hover:bg-black hover:text-white transition">
+            <button className="border px-4 py-2 text-sm bg-white text-black font-medium shadow-sm hover:bg-black hover:text-white transition w-full sm:w-auto">
               Meal Reservations ↗
             </button>
 
-            <button className="border px-4 py-2 text-sm w-full sm:w-auto bg-white hover:bg-gray-100 transition">
+            <button className="border px-4 py-2 text-sm bg-white text-black font-medium shadow-sm hover:bg-gray-100 transition w-full sm:w-auto">
               MENU ☰
             </button>
           </div>
@@ -65,8 +55,9 @@ export default function Hero() {
       </header>
 
       {/* ================= HERO IMAGE ================= */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 z-0">
-        <div className="overflow-hidden border rounded-lg relative">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+        {/* IMPORTANT: overflow-hidden + isolate */}
+        <div className="overflow-hidden border rounded-lg relative isolate">
           <motion.div
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -86,12 +77,18 @@ export default function Hero() {
               "
             />
 
-            {/* Fog Overlay (di bawah header) */}
+            {/* Fog Overlay ONLY inside image */}
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 0 }}
               transition={{ duration: 3 }}
-              className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent blur-2xl z-0"
+              className="
+                absolute inset-0
+                bg-gradient-to-r
+                from-white via-white/40 to-transparent
+                blur-xl
+                pointer-events-none
+              "
             />
           </motion.div>
         </div>
