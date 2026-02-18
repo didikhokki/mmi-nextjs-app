@@ -5,11 +5,15 @@ import StickyReservation from "./StickyReservation";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[#f8f8f5]">
-      <StickyReservation />
+    <section className="w-full bg-[#f8f8f5] relative">
+      
+      {/* Sticky Floating Buttons */}
+      <div className="relative z-40">
+        <StickyReservation />
+      </div>
 
       {/* ================= TOP HEADER FIX ================= */}
-      <div className="border-b bg-white">
+      <header className="border-b bg-white relative z-50">
         <div
           className="
             max-w-7xl mx-auto
@@ -22,12 +26,12 @@ export default function Hero() {
         >
           {/* Logo */}
           <div className="flex items-center gap-3 justify-center md:justify-start">
-            <div className="w-10 h-10 border rounded-full flex items-center justify-center font-serif">
+            <div className="w-10 h-10 border rounded-full flex items-center justify-center font-serif bg-white">
               H
             </div>
 
             <div>
-              <p className="text-sm font-semibold tracking-widest">
+              <p className="text-sm font-semibold tracking-widest text-black">
                 HOTARUTEI
               </p>
               <p className="text-xs text-gray-500">
@@ -36,7 +40,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Buttons FIX */}
+          {/* Buttons */}
           <div
             className="
               flex flex-col sm:flex-row
@@ -45,30 +49,31 @@ export default function Hero() {
               justify-center md:justify-end
             "
           >
-            <button className="border px-4 py-2 text-sm w-full sm:w-auto hover:bg-black hover:text-white transition">
+            <button className="border px-4 py-2 text-sm w-full sm:w-auto bg-white hover:bg-black hover:text-white transition">
               Room Reservations ↗
             </button>
 
-            <button className="border px-4 py-2 text-sm w-full sm:w-auto hover:bg-black hover:text-white transition">
+            <button className="border px-4 py-2 text-sm w-full sm:w-auto bg-white hover:bg-black hover:text-white transition">
               Meal Reservations ↗
             </button>
 
-            <button className="border px-4 py-2 text-sm w-full sm:w-auto hover:bg-gray-100 transition">
+            <button className="border px-4 py-2 text-sm w-full sm:w-auto bg-white hover:bg-gray-100 transition">
               MENU ☰
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* ================= HERO IMAGE ================= */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
-        <div className="overflow-hidden border rounded-lg">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 z-0">
+        <div className="overflow-hidden border rounded-lg relative">
           <motion.div
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 2.2, ease: "easeOut" }}
             className="relative"
           >
+            {/* Image */}
             <img
               src="https://cpunud.com/utama.png"
               alt="Hero Resort"
@@ -81,11 +86,12 @@ export default function Hero() {
               "
             />
 
+            {/* Fog Overlay (di bawah header) */}
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 0 }}
               transition={{ duration: 3 }}
-              className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent blur-2xl"
+              className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent blur-2xl z-0"
             />
           </motion.div>
         </div>
