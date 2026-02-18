@@ -1,16 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import StickyReservation from  "./StickyReservation";
+import StickyReservation from "./StickyReservation";
 
 export default function Hero() {
   return (
     <section className="w-full bg-[#f8f8f5]">
       {/* Sticky Floating Buttons */}
-        <StickyReservation />
+      <StickyReservation />
+
       {/* TOP HEADER */}
       <div className="border-b bg-white">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+        <div
+          className="
+            max-w-7xl mx-auto
+            flex flex-col md:flex-row
+            justify-between items-center
+            px-4 md:px-8
+            py-4
+            gap-4
+          "
+        >
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 border rounded-full flex items-center justify-center font-serif">
@@ -27,15 +37,15 @@ export default function Hero() {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-4 items-center">
-            <button className="border px-5 py-2 text-sm hover:bg-black hover:text-white transition">
+          <div className="flex flex-col sm:flex-row gap-3 items-center">
+            <button className="border px-4 py-2 text-sm w-full sm:w-auto hover:bg-black hover:text-white transition">
               Room Reservations ↗
             </button>
-            <button className="border px-5 py-2 text-sm hover:bg-black hover:text-white transition">
+            <button className="border px-4 py-2 text-sm w-full sm:w-auto hover:bg-black hover:text-white transition">
               Meal Reservations ↗
             </button>
 
-            <button className="ml-4 text-sm tracking-widest">
+            <button className="text-sm tracking-widest mt-2 sm:mt-0">
               MENU ☰
             </button>
           </div>
@@ -43,7 +53,7 @@ export default function Hero() {
       </div>
 
       {/* HERO IMAGE */}
-      <div className="relative max-w-7xl mx-auto px-8 py-6">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-6">
         <div className="overflow-hidden border">
           {/* Smoke Reveal Animation */}
           <motion.div
@@ -59,7 +69,11 @@ export default function Hero() {
             <img
               src="https://cpunud.com/utama.png"
               alt="Hero Resort"
-              className="w-full h-[480px] object-cover"
+              className="
+                w-full 
+                h-[260px] sm:h-[380px] md:h-[480px]
+                object-cover
+              "
             />
 
             {/* Fog Overlay */}
@@ -75,14 +89,32 @@ export default function Hero() {
 
       {/* BOTTOM NAV */}
       <div className="border-t bg-[#f8f8f5]">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-5 text-sm tracking-wide">
+        <div
+          className="
+            max-w-7xl mx-auto
+            flex flex-col md:flex-row
+            justify-between items-center
+            px-4 md:px-8
+            py-5
+            text-sm
+            gap-4
+          "
+        >
           {/* Scroll */}
           <p className="flex items-center gap-2">
             ↓ <span className="text-gray-600">Scroll</span>
           </p>
 
           {/* Menu */}
-          <nav className="flex gap-8 uppercase text-gray-700">
+          <nav
+            className="
+              flex gap-6 uppercase text-gray-700
+              overflow-x-auto whitespace-nowrap
+              w-full md:w-auto
+              justify-start md:justify-center
+              scrollbar-hide
+            "
+          >
             <a href="#">Information</a>
             <a href="#">Overview</a>
             <a href="#">Restaurant</a>
