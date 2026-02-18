@@ -29,11 +29,35 @@ export default function StickyReservation() {
           transition={{ duration: 0.4 }}
           className="fixed top-6 right-8 z-[999] flex gap-3"
         >
-          <button className="border bg-white px-5 py-2 text-sm shadow-md hover:bg-black hover:text-white transition">
+          {/* Room Button */}
+          <button
+            className="
+              border border-black
+              bg-white
+              text-black
+              px-5 py-2
+              text-sm
+              shadow-md
+              hover:bg-black hover:text-white
+              transition
+            "
+          >
             Room Reservations ↗
           </button>
 
-          <button className="border bg-white px-5 py-2 text-sm shadow-md hover:bg-black hover:text-white transition">
+          {/* Meal Button */}
+          <button
+            className="
+              border border-black
+              bg-white
+              text-black
+              px-5 py-2
+              text-sm
+              shadow-md
+              hover:bg-black hover:text-white
+              transition
+            "
+          >
             Meal Reservations ↗
           </button>
         </motion.div>
