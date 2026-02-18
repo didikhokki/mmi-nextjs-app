@@ -19,7 +19,9 @@
   }
 }
 
-/* ===== Smooth Infinite Slider ===== */
+/* ===============================
+   Smooth Infinite Slider
+================================ */
 
 .slider-track {
   display: flex;
@@ -27,14 +29,7 @@
   animation: scrollSlider 30s linear infinite;
 }
 
-/* ===== Smooth Infinite Slider ===== */
-
-.slider-track {
-  display: flex;
-  width: max-content;
-  animation: scrollSlider 30s linear infinite;
-}
-
+/* Slide Default (Desktop) */
 .slide {
   min-width: 320px;
   height: 220px;
@@ -42,7 +37,38 @@
   flex-shrink: 0;
 }
 
-/* LEFT → RIGHT Animation */
+/* ===============================
+   Mobile Responsive
+================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .slide {
+    min-width: 240px;
+    height: 170px;
+  }
+
+  .slider-track {
+    animation-duration: 25s;
+  }
+}
+
+/* HP Kecil */
+@media (max-width: 480px) {
+  .slide {
+    min-width: 180px;
+    height: 130px;
+  }
+
+  .slider-track {
+    animation-duration: 20s;
+  }
+}
+
+/* ===============================
+   LEFT → RIGHT Animation
+================================ */
+
 @keyframes scrollSlider {
   from {
     transform: translateX(-50%);
@@ -52,13 +78,14 @@
   }
 }
 
-
-
-/* Slider animation */
+/* Extra animation class */
 .animate-slider {
-  animation: sliderMove 25s linear infinite;
+  animation: scrollSlider 25s linear infinite;
 }
 
+/* ===============================
+   Body Style
+================================ */
 
 body {
   background: var(--background);
